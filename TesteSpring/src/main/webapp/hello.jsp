@@ -1,6 +1,5 @@
 <%-- 
     Document   : hello
-    Created on : 23/10/2016, 21:46:42
     Author     : Joao_Jardim
 --%>
 
@@ -21,18 +20,12 @@
 <div class="container">
     <div class="row">
         <div class="span8 offset2">
-            <h1>Users</h1>
+            <h1>Usuario</h1>
             <form:form method="post" action="add" commandName="user" class="form-horizontal">
             <div class="control-group">
-                <form:label cssClass="control-label" path="firstName">First Name:</form:label>
+                <form:label cssClass="control-label" path="firstName">Nome:</form:label>
                 <div class="controls">
                     <form:input path="firstName"/>
-                </div>
-            </div>
-            <div class="control-group">
-                <form:label cssClass="control-label" path="lastName">Last Name:</form:label>
-                <div class="controls">
-                    <form:input path="lastName"/>
                 </div>
             </div>
             <div class="control-group">
@@ -48,7 +41,7 @@
                 </div>
             </div>
  
-            <c:if test="${!empty users}">
+            <c:if test="${!empty usuarios}">
                 <h3>Users</h3>
                 <table class="table table-bordered table-striped">
                     <thead>
@@ -59,9 +52,9 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <c:forEach items="${users}" var="user">
+                    <c:forEach items="${usuarios}" var="user">
                         <tr>
-                            <td>${user.lastName}, ${user.firstName}</td>
+                            <td>${user.nome}, ${user.classificacao}</td>
                             <td>${user.email}</td>
                             <td>
                                 <form action="delete/${user.id}" method="post"><input type="submit"
